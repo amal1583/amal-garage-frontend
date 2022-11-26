@@ -1,0 +1,27 @@
+$primaryMain: #3f5ab0;
+$primaryDark: #3077a9;
+$primaryLight: #73bfb8;
+$secondaryLight: #77EC89;
+$secondaryMain: #41dc91;
+$secondaryDark: #2AA03D;
+$errorMain: #F44336;
+$errorDark: #AB2F26;
+$errorLight: #F77B72;
+$textColorMain: rgba(0, 0, 0, 0.8);
+$textColorLight: rgba(0, 0, 0, 0.5);
+$fontFamily: "Lato", sans-serif;
+$lightBlue: #ecf6fd;
+$lihtgreen: #6fda6d;
+$lihtgrey: #EBEBEB;
+$greyTXT: #6B6B6B;
+$chipColor: #EBF0FF;
+
+:export {
+  lihtgreen: $lihtgreen;
+  lightBlue: $lightBlue;
+  lightgrey: $lihtgrey;
+  secondaryMain: $secondaryMain;
+  primaryMain: $primaryMain;
+  primaryDark: $primaryDark;
+  chipColor: $chipColor;
+}

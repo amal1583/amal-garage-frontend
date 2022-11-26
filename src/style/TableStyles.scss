@@ -1,0 +1,133 @@
+@import './variables.scss';
+
+.table-wrapper {
+  min-height: 135px;
+  overflow: inherit;
+
+  > header {
+    padding-top: 6px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #ededed;
+
+    .MuiFormControl-root{
+      max-width: 300px;
+      bottom: -1px;
+    }
+
+    .header-actions {
+      margin-left: auto;
+    }
+  }
+  .rdt_{
+    &TableHead {
+      margin-bottom: 6px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.24);
+      .rdt_TableCol {
+        font-size: 12px;
+        font-weight: 600;
+        font-family: $fontFamily;
+      }
+    }
+
+    &TableBody {
+      .rdt_TableCell {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: $fontFamily;
+      }
+    }
+
+    &TableFooter {
+      margin-top: 6px;
+      box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.24);
+    }
+
+    &TableRow {
+      border: none;
+
+      &.active {
+        background-color: $primaryMain;
+        color: #ffffff;
+      }
+    }
+  }
+  // .rdt_Pagination {
+  //   margin: 0px;
+  // }
+  .MuiCircularProgress-root {
+    margin-top: 20px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+.top-locations-table-wrapper {
+  min-height: 135px;
+  overflow: inherit;
+
+  > header {
+    padding-top: 6px;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #ededed;
+    display: none;
+
+    .MuiFormControl-root{
+      max-width: 300px;
+      bottom: -1px;
+    }
+
+    .header-actions {
+      margin-left: auto;
+    }
+  }
+  .rdt_{
+    &TableHead {
+      display: none;
+      margin-bottom: 6px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.24);
+      .rdt_TableCol {
+        font-size: 12px;
+        font-weight: 600;
+        font-family: $fontFamily;
+      }
+    }
+
+    &TableBody {
+      .rdt_TableCell {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: $fontFamily;
+      }
+      .hBLkzW {
+        background-color: #F4F5FA !important;
+      }
+    }
+
+    &TableFooter {
+      margin-top: 6px;
+      box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.24);
+    }
+
+    &TableRow {
+      border: none;
+      min-height: 35px !important;
+      &.active {
+        background-color: $primaryMain;
+        color: #ffffff;
+        
+      }
+    }
+  }
+  .MuiCircularProgress-root {
+    margin-top: 20px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+}

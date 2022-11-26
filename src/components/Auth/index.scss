@@ -1,0 +1,76 @@
+@import "../../style/variables.scss";
+$boxShadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+$cardBg: #f9f9f9;
+.auth {
+  &-wrapper {
+    min-height: 100vh;
+    background-color: #ffffff;
+  }
+
+  &-container {
+    width: 90%;
+    max-width: 385px;
+    margin: auto;
+    padding: 90px 0;
+    .powered-by-txt {
+      text-align: center;
+      color: red;
+      margin-top: 8px;
+      span {
+        font-weight: 600;
+      }
+      a {
+        color: red;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-logo {
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &-form-wrapper {
+    margin-top: 30px;
+    padding: 45px 32px;
+    background-color: $cardBg;
+    box-shadow: $boxShadow;
+    h1 {
+      margin: 0 0 10px;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    .form-error {
+      margin: 0;
+      color: $errorMain;
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: 0.05em;
+    }
+    .form-loading{
+      margin-top: 20px;
+    }
+    .form-submit {
+      margin-top: 20px;
+    }
+    .forgot-password-wrapper {
+      text-align: end;
+    }
+    .forgot-password {
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+}
+.mw550imp {
+  max-width: 550px !important;
+}
+.dackdrop{
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}

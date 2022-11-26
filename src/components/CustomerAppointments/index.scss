@@ -1,0 +1,23 @@
+@import '../../style/variables.scss';
+
+.paper-size {
+    width: 250px;
+    height: 200px;
+    padding: 30px;
+}
+
+.creation-paper-size {
+    padding: 30px;
+}
+
+.font-12 {
+    font-size: 12px !important;
+}
+
+.font-14 {
+    font-size: 14px !important;
+}
+
+.weight-600 {
+    font-weight: 600 !important;
+}
