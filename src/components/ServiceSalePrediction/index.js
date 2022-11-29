@@ -2,13 +2,12 @@ import React from 'react';
 import './index.scss';
 import { TextField, Button, CircularProgress, Grid, Paper, Typography, Container } from '@material-ui/core';
 import { AuthContext } from "../Auth/AuthContext";
-import { Bar, Line } from "react-chartjs-2";
+import { Bar, Line, Doughnut } from "react-chartjs-2";
 import DashboardApis from '../../apis/DashboardApis';
 import DataTable from "react-data-table-component";
 import TableStyles from "../../style/TableStyles";
 import "../../style/TableStyles.scss";
 import ServicesPredictionApis from '../../apis/ServiceSalePrediction';
-
 
 const previous_graph_data = {
     labels: [],
@@ -80,16 +79,41 @@ const future_graph_options = {
     }
 };
 
+let updatedData = {
+    labels: ['Home', 'Garage'],
+    datasets: [
+      {
+        label: 'Services',
+        data: [12, 19],
+        backgroundColor: [
+          'rgba(255, 99, 132)',
+          'rgba(54, 162, 235)',
+        ],
+        // borderColor: [
+        //   'rgba(255, 99, 132, 1)',
+        //   'rgba(54, 162, 235, 1)',
+        //   'rgba(255, 206, 86, 1)',
+        //   'rgba(75, 192, 192, 1)',
+        //   'rgba(153, 102, 255, 1)',
+        //   'rgba(255, 159, 64, 1)',
+        // ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
 class ServiceSalePrediction extends React.Component {
     static contextType = AuthContext
     state = {
         previous_loading: false,
-        future_loading: false
+        future_loading: false,
+        data: []
     }
 
     componentDidMount() {
         this.getPreviousSale()
         this.getFutureSale()
+        this.getServiceDonutChartSale();
     }
 
     getPreviousSale = () => {
@@ -108,16 +132,28 @@ class ServiceSalePrediction extends React.Component {
 
     getFutureSale = () => {
         this.setState({
+            
             future_loading: true
         })
         ServicesPredictionApis.getFutureSale().then(data => {
             future_graph_data.labels = data.map(duration => duration.date)
             future_graph_data.datasets[0].data = data.map(sale => sale.sale)
             this.setState({
+                ...this.state,
                 future_loading: false
             })
         })
             .catch(error => this.context.handleCatch(error, () => this.setState({ future_loading: false })))
+    }
+
+    getServiceDonutChartSale = ()=>{
+        ServicesPredictionApis.getServiceDonutChartSale().then(data=>{
+            this.setState({
+                ...this.state,
+                data:data
+            })
+        }).catch(error => this.context.handleCatch(error, () => this.setState({ data: [] })))
+
     }
 
     handleUpdate = (key, val) => {
@@ -147,8 +183,18 @@ class ServiceSalePrediction extends React.Component {
                                 }
                             </Paper>
                         </Grid>
-                        <Grid item xs={2}>
-                            hi
+                        <Grid item xs={4}>
+                            <Paper style={{minHeight:"93%"}} className='graph-card'>
+                                {
+                                    this.state.data.length!==0 
+                                    &&
+                                    <Doughnut data={this.state.data} />
+                                    ||
+                                    <div className="tc">
+                                        <CircularProgress color="primary" />
+                                    </div>  
+                                }
+                            </Paper>
                         </Grid>
                         <Grid item xs={12}>
                             <Paper className='graph-card'>

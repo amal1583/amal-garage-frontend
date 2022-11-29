@@ -3,6 +3,8 @@ import { backendUrl } from "../utils";
 
 let previousURL = "/historicServicesSale";
 let futureURL = "/futureServicesSale";
+let serviceDonutChart = "/serviceDonutChart";
+
 
 
 const ServicesPredictionApis = {
@@ -19,6 +21,15 @@ const ServicesPredictionApis = {
     getFutureSale() {
         return Axios({
             url: backendUrl + futureURL,
+            method: "get",
+            headers: {
+                "content-type": "application/json",
+            },
+        }).then((response) => response.data);
+    },
+    getServiceDonutChartSale() {
+        return Axios({
+            url: backendUrl + serviceDonutChart,
             method: "get",
             headers: {
                 "content-type": "application/json",
