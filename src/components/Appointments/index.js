@@ -9,7 +9,7 @@ import InProgressAppointments from './inProgress';
 import CompletedAppointments from './completed';
 
 const tabs = {
-    allAppointments: "All Appointments",
+    // allAppointments: "All Appointments",
     unAssigned: "Un Assigned",
     pending: "Pending",
     inprogress: 'In Progress',
@@ -20,7 +20,8 @@ class Appointments extends React.Component {
     static contextType = AuthContext
     state = {
         currentTab: 0,
-        currentTabName: tabs.allAppointments,
+        // currentTabName: tabs.allAppointments,
+        currentTabName: tabs.unAssigned
     }
 
     componentDidMount() {
@@ -52,16 +53,17 @@ class Appointments extends React.Component {
                     textColor="primary"
                     onChange={this.handleTabChange}
                 >
-                    <Tab label={tabs.allAppointments} />
+                    {/* <Tab label={tabs.allAppointments} /> */}
                     <Tab label={tabs.unAssigned} />
                     <Tab label={tabs.pending} />
                     <Tab label={tabs.inprogress} />
                     <Tab label={tabs.completed} />
                 </Tabs>
                 {
-                    currentTabName === tabs.allAppointments ?
-                        <AllAppointments />
-                        : currentTabName === tabs.unAssigned ?
+                    // currentTabName === tabs.allAppointments ?
+                        // <AllAppointments />
+                        // : 
+                        currentTabName === tabs.unAssigned ?
                             <UnAssignedAppointments />
                             : currentTabName === tabs.pending ?
                                 <PendingAppointments />

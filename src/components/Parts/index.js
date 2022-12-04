@@ -37,7 +37,7 @@ class Parts extends React.Component {
       sortable: true,
     },
     {
-      name: "Price",
+      name: "Price (PKR)",
       selector: "price",
       sortable: true,
     },

@@ -28,7 +28,7 @@ class CompletedAppointments extends React.Component {
             sortable: true,
         },
         {
-            name: "Amount",
+            name: "Amount (PKR)",
             selector: "amount",
             sortable: true,
         },
@@ -38,7 +38,7 @@ class CompletedAppointments extends React.Component {
             sortable: true,
         },
         {
-            name: "Service Price",
+            name: "Service Price (PKR)",
             selector: "service_price",
             sortable: true,
         },
@@ -115,8 +115,8 @@ class CompletedAppointments extends React.Component {
                         progressPending={this.state.is_loading}
                         progressComponent={<CircularProgress color="primary" />}
                         pagination
-                        selectableRows
-                        selectableRowsComponent={Checkbox}
+                        //selectableRows
+                        //selectableRowsComponent={Checkbox}
                         onSelectedRowsChange={this.handleRowSelected}
                         onRowClicked={this.onRowClick}
                         clearSelectedRows={this.state.toggleCleared}

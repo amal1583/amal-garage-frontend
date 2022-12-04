@@ -99,8 +99,8 @@ class InProgressAppointments extends React.Component {
                         progressPending={this.state.is_loading}
                         progressComponent={<CircularProgress color="primary" />}
                         pagination
-                        selectableRows
-                        selectableRowsComponent={Checkbox}
+                        //selectableRows
+                        //selectableRowsComponent={Checkbox}
                         onSelectedRowsChange={this.handleRowSelected}
                         onRowClicked={this.onRowClick}
                         clearSelectedRows={this.state.toggleCleared}

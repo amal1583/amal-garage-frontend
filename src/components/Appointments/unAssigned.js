@@ -17,9 +17,9 @@ class UnAssignedAppointments extends React.Component {
         this.state = {
             appointments_data: [],
             is_loading: false,
-            open_employee_dialog: false,
+            // open_employee_dialog: false,
             appointment_id: "",
-            employee_id: "",
+            // employee_id: "",
             employee_data: []
         };
     }
@@ -35,11 +35,11 @@ class UnAssignedAppointments extends React.Component {
             selector: "customer_id",
             sortable: false,
         },
-        {
-            name: "Employee ID",
-            selector: "employee_id",
-            sortable: false,
-        },
+        // {
+        //     name: "Employee ID",
+        //     selector: "employee_id",
+        //     sortable: false,
+        // },
         {
             name: "Appoint Time",
             selector: "appoint_time",
@@ -147,8 +147,8 @@ class UnAssignedAppointments extends React.Component {
                         progressPending={this.state.is_loading}
                         progressComponent={<CircularProgress color="primary" />}
                         pagination
-                        selectableRows
-                        selectableRowsComponent={Checkbox}
+                        //selectableRows
+                        //selectableRowsComponent={Checkbox}
                         onSelectedRowsChange={this.handleRowSelected}
                         onRowClicked={this.onRowClick}
                         clearSelectedRows={this.state.toggleCleared}
@@ -175,7 +175,7 @@ class UnAssignedAppointments extends React.Component {
                                     <DialogContentText id="alert-dialog-description">
                                         <div className="tc">
                                         <FormControl className="formControl" style={{ width: "300px" }}>
-                                            <Select
+                                            {/* <Select
                                                 labelId="demo-simple-select-label"
                                                 id="demo-simple-select"
                                                 value={this.state.employee_id}
@@ -187,7 +187,7 @@ class UnAssignedAppointments extends React.Component {
                                                         <MenuItem key="phone" value={employee.phone}>{employee.name}</MenuItem>
                                                     ))
                                                 }
-                                            </Select>
+                                            </Select> */}
                                         </FormControl>
                                         </div>
                                     </DialogContentText>

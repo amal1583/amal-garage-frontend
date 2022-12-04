@@ -45,19 +45,19 @@ class AllAppointments extends React.Component {
         {
             name: "Assigned",
             selector: "assigned",
-            cell: row => row.status.assigned,
+            cell: row => row.status?.assigned,
             sortable: false,
         },
         {
             name: "In Progress",
             selector: "in_progress",
-            cell: row => row.status.in_progress,
+            cell: row => row.status?.in_progress,
             sortable: false,
         },
         {
             name: "Completed",
             selector: "completed",
-            cell: row => row.status.in_progress,
+            cell: row => row.status?.in_progress,
             sortable: false,
         }
     ];
@@ -100,8 +100,8 @@ class AllAppointments extends React.Component {
                         progressPending={this.state.is_loading}
                         progressComponent={<CircularProgress color="primary" />}
                         pagination
-                        selectableRows
-                        selectableRowsComponent={Checkbox}
+                        // selectableRows
+                        // selectableRowsComponent={Checkbox}
                         onSelectedRowsChange={this.handleRowSelected}
                         onRowClicked={this.onRowClick}
                         clearSelectedRows={this.state.toggleCleared}

@@ -249,8 +249,8 @@ class EmployeeDetail extends React.Component {
                         progressPending={this.state.table_loading}
                         progressComponent={<CircularProgress color="primary" />}
                         pagination
-                        selectableRows
-                        selectableRowsComponent={Checkbox}
+                        //selectableRows
+                        //selectableRowsComponent={Checkbox}
                         onSelectedRowsChange={this.handleRowSelected}
                         onRowClicked={this.onRowClick}
                         clearSelectedRows={this.state.toggleCleared}
